@@ -1,0 +1,22 @@
+================================
+git fetch origin master:tmp
+git diff tmp
+git merge tmp
+git branch -D tmp
+
+上述命令等价与
+
+git fetch origin master
+git log -p master..origin/master
+git merge master origin/master
+
+================================
+git stash
+git stash list
+git stash apply
+git stash pop
+git stash clear
+
+================================
+git submodule init
+git submodule update
