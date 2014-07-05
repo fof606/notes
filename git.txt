@@ -18,16 +18,31 @@ git stash pop
 git stash clear
 
 ================================
+submodule项目和它的父项目本质上是2个独立的git仓库。只是父项目存储了它依赖的submodule项目
+的版本号信息而已。如果你的同事更新了submodule，然后更新了父项目中依赖的版本号。你需要在
+git pull之后，调用 git submodule update来更新submodule信息。
+
 git submodule init
 git submodule update
 
 ================================
-git reset --hard ...
+git reset --hard ... # 本地变化彻底清除
+git reset --soft ... # 本地变化回退到暂存区域
+git reset ...        # 本地文件回退至不暂存状态
 
 ================================
 git log HEAD..origin/master
 git log origin/master..HEAD
 
 ================================
+git push origin <local_branch_name>:<remote_branch_name>
 git push origin tmp:tmp
 git purh origin :tmp
+
+================================
+git blame filename
+git blame -L 100,200 filename
+
+================================
+git commit 命令的-a 选项可只将所有被修改或者已删除的且已经被git管理的文档提交倒仓库中。
+如果只是修改或者删除了已被Git 管理的文档，是没必要使用git add 命令的。
