@@ -1,0 +1,9 @@
+echo -e 不换行
+echo -n
+
+find . -size +1M 查找大于1M的文件
+find . -perm -u=x 查找当前用户有执行权限的文件
+find . -mmin -1 查找1分钟内修改过的文件
+find . -type d 查找所有目录文件
+
+ll | awk '{print NR " " $0}'
