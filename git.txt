@@ -14,6 +14,7 @@ git merge master origin/master
 git stash
 git stash list
 git stash apply
+git stash apply stash@{1}
 git stash pop
 git stash clear
 
@@ -46,3 +47,7 @@ git blame -L 100,200 filename
 ================================
 git commit 命令的-a 选项可只将所有被修改或者已删除的且已经被git管理的文档提交倒仓库中。
 如果只是修改或者删除了已被Git 管理的文档，是没必要使用git add 命令的。
+
+================================
+提取历史版本到tmp分支
+git checkout -b tmp 3c529b88ec95b1143b9d8cd3ad8ee8b34da242e7
